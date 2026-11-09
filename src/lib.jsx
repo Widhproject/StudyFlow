@@ -1,7 +1,7 @@
 // Helper, konteks, dan komponen UI bersama
 import {createContext,useContext,useState} from 'react'
 import {createClient} from '@supabase/supabase-js'
-export const sb=createClient(import.meta.env.VITE_SUPABASE_URL,import.meta.env.VITE_SUPABASE_ANON_KEY)
+export const sb=createClient(import.meta.env.VITE_SUPABASE_URL||'https://placeholder.supabase.co',import.meta.env.VITE_SUPABASE_ANON_KEY||'placeholder')
 export const Ctx=createContext(); export const useApp=()=>useContext(Ctx)
 export const DAYS=['Senin','Selasa','Rabu','Kamis','Jumat','Sabtu','Minggu']
 export const PRI={tinggi:'Tinggi',sedang:'Sedang',rendah:'Rendah'}
